@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <!-- <link rel="stylesheet" href="./assets/bootstrap.min.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./assets/style.css">
+    <title>Odi Calculation</title>
+  </head>
+
+  <body>
+    <div>
+      <h1>Oswestry Disability Index (ODI) For Low Back Pain</h1>
+      <form id="survey-form">
+
+        <div class="form-group">
+          <p>Pain Intensity
+          </p>
+          <label>
+            <input name="pain_intensity" value="0" type="checkbox" class="input-checkbox" />I can tolerate the
+            pain I
+            have without having to use pain killers (0 points)
+          </label>
+          <label>
+            <input name="pain_intensity" value="1" type="checkbox" class="input-checkbox" />The pain is bad but I
+            manage
+            without taking pain killers (+1 point)
+          </label>
+          <label>
+            <input name="pain_intensity" value="2" type="checkbox" class="input-checkbox" />Pain killers give
+            complete
+            relief from pain (+2 points)
+          </label>
+          <label>
+            <input name="pain_intensity" value="3" type="checkbox" class="input-checkbox" />Pain killers give moderate
+            relief
+            from pain (+3 points)
+          </label>
+          <label>
+            <input name="pain_intensity" value="4" type="checkbox" class="input-checkbox" />Pain killers give very
+            little
+            relief from pain (+4 points)
+          </label>
+          <label>
+            <input name="pain_intensity" value="5" type="checkbox" class="input-checkbox" />Pain killers have no
+            effect on the
+            pain and I do not use them (+5 points)
+          </label>
+        </div>
+
+
+        <div class="form-group">
+          <p>Personal Care
+
+          </p>
+          <label>
+            <input name="personal_care" value="0" type="checkbox" class="input-checkbox" />I can look after myself
+            normally without causing extra pain (0 points)
+          </label>
+          <label>
+            <input name="personal_care" value="1" type="checkbox" class="input-checkbox" />I can look after myself
+            normally but it causes extra pain (+1 point)
+          </label>
+          <label>
+            <input name="personal_care" value="2" type="checkbox" class="input-checkbox" />It is painful to look after
+            myself and I am slow and careful (+2 points)
+          </label>
+          <label>
+            <input name="personal_care" value="3" type="checkbox" class="input-checkbox" />I need some help but manage most
+            of my personal care (+3 points)
+          </label>
+          <label>
+            <input name="personal_care" value="4" type="checkbox" class="input-checkbox" />I need help every day in most
+            aspects of self care (+4 points)
+          </label>
+          <label>
+            <input name="personal_care" value="5" type="checkbox" class="input-checkbox" />I do not get dressed, I wash with
+            difficulty and stay in bed (+5 points)
+          </label>
+        </div>
+
+
+
+        <div class="form-group">
+          <p>Lifting
+
+          </p>
+          <label>
+            <input name="lifting" value="0" type="checkbox" class="input-checkbox" />I can lift heavy weights
+            without extra pain (0 points)
+          </label>
+          <label>
+            <input name="lifting" value="1" type="checkbox" class="input-checkbox" />I can lift heavy weights but
+            it gives extra pain (+1 point)
+          </label>
+          <label>
+            <input name="lifting" value="2" type="checkbox" class="input-checkbox" />Pain prevents me from
+            lifting heavy weights off the floor but I can manage if they are conveniently positioned for
+            example on a table (+2 points)
+          </label>
+          <label>
+            <input name="lifting" value="3" type="checkbox" class="input-checkbox" />Pain prevents me from lifting
+            heavy weights but I can manage light to medium weights if they are conveniently positioned
+            (+3 points)
+          </label>
+          <label>
+            <input name="lifting" value="4" type="checkbox" class="input-checkbox" />I can lift only very light weights
+            (+4 points)
+          </label>
+          <label>
+            <input name="lifting" value="5" type="checkbox" class="input-checkbox" />I cannot lift or carry anything at
+            all (+5 points)
+          </label>
+        </div>
+
+
+        <div class="form-group">
+          <p>Walking
+
+
+          </p>
+          <label>
+            <input name="walking" value="0" type="checkbox" class="input-checkbox" />Pain does not prevent me
+            walking any distance (0 points)
+          </label>
+          <label>
+            <input name="walking" value="1" type="checkbox" class="input-checkbox" />Pain prevents me walking more
+            than 1 mile (+1 point)
+          </label>
+          <label>
+            <input name="walking" value="2" type="checkbox" class="input-checkbox" />Pain prevents me walking
+            more than 0.5 miles (+2 points)
+          </label>
+          <label>
+            <input name="walking" value="3" type="checkbox" class="input-checkbox" />Pain prevents me walking more than
+            0.25 miles (+3 points)
+          </label>
+          <label>
+            <input name="walking" value="4" type="checkbox" class="input-checkbox" />I can only walk using a stick or
+            crutches (+4 points)
+          </label>
+          <label>
+            <input name="walking" value="5" type="checkbox" class="input-checkbox" />I am in bed most of the time and
+            have to crawl to the toilet (+5 points)
+          </label>
+        </div>
+
+        <div class="form-group">
+          <p>Sitting
+
+
+          </p>
+          <label>
+            <input name="sitting" value="0" type="checkbox" class="input-checkbox" />I can sit in any chair as
+            long as I like (0 points)
+          </label>
+          <label>
+            <input name="sitting" value="1" type="checkbox" class="input-checkbox" />I can only sit in my favorite
+            chair as long as I like (+1 point)
+          </label>
+          <label>
+            <input name="sitting" value="2" type="checkbox" class="input-checkbox" />Pain prevents me sitting
+            more than 1 hour (+2 points)
+          </label>
+          <label>
+            <input name="sitting" value="3" type="checkbox" class="input-checkbox" />Pain prevents me from sitting more
+            than 0.5 hours (+3 points)
+          </label>
+          <label>
+            <input name="sitting" value="4" type="checkbox" class="input-checkbox" />Pain prevents me from sitting more
+            than 10 minutes (+4 points)
+          </label>
+          <label>
+            <input name="sitting" value="5" type="checkbox" class="input-checkbox" />Pain prevents me from sitting at
+            all (+5 points)
+          </label>
+        </div>
+
+        <div class="form-group">
+          <p>Standing
+
+
+
+          </p>
+          <label>
+            <input name="standing" value="0" type="checkbox" class="input-checkbox" />I can stand as long as I want
+            without extra pain (0 points)
+          </label>
+          <label>
+            <input name="standing" value="1" type="checkbox" class="input-checkbox" />I can stand as long as I want
+            but it gives me extra pain (+1 point)
+          </label>
+          <label>
+            <input name="standing" value="2" type="checkbox" class="input-checkbox" />Pain prevents me from
+            standing for more than 1 hour (+2 points)
+          </label>
+          <label>
+            <input name="standing" value="3" type="checkbox" class="input-checkbox" />Pain prevents me from standing for
+            more than 30 minutes (+3 points)
+          </label>
+          <label>
+            <input name="standing" value="4" type="checkbox" class="input-checkbox" />Pain prevents me from standing for
+            more than 10 minutes (+4 points)
+          </label>
+          <label>
+            <input name="standing" value="5" type="checkbox" class="input-checkbox" />Pain prevents me from standing at
+            all (+5 points)
+          </label>
+        </div>
+
+        <div class="form-group">
+          <p>Sleeping</p>
+
+
+
+          </p>
+          <label>
+            <input name="sleeping" value="0" type="checkbox" class="input-checkbox" />Pain does not prevent me from
+            sleeping well (0 points)
+          </label>
+          <label>
+            <input name="sleeping" value="1" type="checkbox" class="input-checkbox" />I can sleep well only by using
+            tablets (+1 point)
+          </label>
+          <label>
+            <input name="sleeping" value="2" type="checkbox" class="input-checkbox" />Even when I take tablets I
+            have less than 6 hours sleep (+2 points)
+          </label>
+          <label>
+            <input name="sleeping" value="3" type="checkbox" class="input-checkbox" />Even when I take tablets I have
+            less than 4 hours sleep (+3 points)
+          </label>
+          <label>
+            <input name="sleeping" value="4" type="checkbox" class="input-checkbox" />Even when I take tablets I have
+            less than 2 hours of sleep (+4 points)
+          </label>
+          <label>
+            <input name="sleeping" value="5" type="checkbox" class="input-checkbox" />Pain prevents me from sleeping at
+            all (+5 points)
+          </label>
+        </div>
+
+
+        <div class="form-group">
+          <p>Sex Life</p>
+
+
+
+          </p>
+          <label>
+            <input name="sex_life" value="0" type="checkbox" class="input-checkbox" />My sex life is normal and
+            causes no extra pain (0 points)
+          </label>
+          <label>
+            <input name="sex_life" value="1" type="checkbox" class="input-checkbox" />My sex life is normal but
+            causes some extra pain (1 point)
+          </label>
+          <label>
+            <input name="sex_life" value="2" type="checkbox" class="input-checkbox" />My sex life is nearly
+            normal but is very painful (+2 points)
+          </label>
+          <label>
+            <input name="sex_life" value="3" type="checkbox" class="input-checkbox" />My sex life is severely restricted
+            by pain (+3 points)
+          </label>
+          <label>
+            <input name="sex_life" value="4" type="checkbox" class="input-checkbox" />My sex life is nearly absent
+            because of pain (+4 points)
+          </label>
+          <label>
+            <input name="sex_life" value="5" type="checkbox" class="input-checkbox" />Pain prevents any sex life at all
+            (+5 points)
+          </label>
+        </div>
+
+
+        <div class="form-group">
+          <p>Social Life</p>
+
+
+
+          </p>
+          <label>
+            <input name="social_life" value="0" type="checkbox" class="input-checkbox" />My social life is normal and
+            gives me no extra pain (0 points)
+          </label>
+          <label>
+            <input name="social_life" value="1" type="checkbox" class="input-checkbox" />My social life is normal but
+            increases the degree of pain (+1 point)
+          </label>
+          <label>
+            <input name="social_life" value="2" type="checkbox" class="input-checkbox" />Pain has no significant
+            effect on my social life apart from limiting energetic interests such as dancing (+2 points)
+          </label>
+          <label>
+            <input name="social_life" value="3" type="checkbox" class="input-checkbox" />Pain has restricted my social life
+            and I do not go out as often (+3 points)
+          </label>
+          <label>
+            <input name="social_life" value="4" type="checkbox" class="input-checkbox" />Pain has restricted my social life
+            to my home (+4 points)
+          </label>
+          <label>
+            <input name="social_life" value="5" type="checkbox" class="input-checkbox" />I have no social life because of
+            pain (+5 points)
+          </label>
+        </div>
+
+
+
+        <div class="form-group">
+          <p>Travelling
+          </p>
+
+
+
+          </p>
+          <label>
+            <input name="travelling" value="0" type="checkbox" class="input-checkbox" />I can travel anywhere without
+            extra pain (0 points)
+          </label>
+          <label>
+            <input name="travelling" value="1" type="checkbox" class="input-checkbox" />I can travel anywhere but it
+            gives me extra pain (+1 point)
+          </label>
+          <label>
+            <input name="travelling" value="2" type="checkbox" class="input-checkbox" />Pain is bad but I manage
+            journeys over 2 hours (+2 points)
+          </label>
+          <label>
+            <input name="travelling" value="3" type="checkbox" class="input-checkbox" />Pain restricts me to journeys of
+            less than 1 hour (+3 points)
+          </label>
+          <label>
+            <input name="travelling" value="4" type="checkbox" class="input-checkbox" />Pain restricts me to short
+            necessary journeys under 30 minutes (+4 points)
+          </label>
+          <label>
+            <input name="travelling" value="5" type="checkbox" class="input-checkbox" />Pain prevents me from traveling
+            except to the doctor or hospital (+5 points)
+          </label>
+        </div>
+
+        <button
+          type="button"
+          class="btn btn-primary"
+          onclick="onCalculate()">Calculate</button>
+
+        <button type="reset" class="btn btn-secondary">Reset</button>
+
+      </form>
+
+      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content text-dark">
+            <div class="modal-header">
+              <h5 class="modal-title" id="staticBackdropLabel">Calculation Result</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Calculation successful</p>
+
+              <p>You scored a total of <strong id="percentResult"></strong></p>
+
+              <hr>
+
+              <ul id="yourSelections" class="list-group"></ul>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+              <button type="button" class="btn btn-success">Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <script src="assets/bootstrap.bundle.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+    <script>
+
+      const checkBoxes = document.querySelectorAll('.input-checkbox');
+      const percentResult = document.querySelector('#percentResult');
+      const yourSelections = document.querySelector('#yourSelections');
+      const resultModal = new bootstrap.Modal(document.getElementById('staticBackdrop'));
+
+      const totalCategories = 10;
+      const maxValue = 5;
+      const totalValue = totalCategories * maxValue;
+
+      initializeCheckBox = () => {
+        checkBoxes.forEach(input => {
+
+          input.addEventListener('click', (event) => {
+            console.log(event.target.value);
+            if (event.target.checked) {
+
+              const allRelatedCheckboxes = document.querySelectorAll(`input.input-checkbox[name='${event.target.name}']`);
+
+              allRelatedCheckboxes.forEach(relatedCheckbox => {
+                relatedCheckbox.checked = false
+              });
+
+              input.checked = true;
+
+            }
+
+          })
+        })
+      }
+
+      initializeCheckBox();
+
+      const onCalculate = () => {
+
+        const isSomeChecked = Array.from(checkBoxes)
+          .some(item => item.checked)
+
+        if (!isSomeChecked) {
+          alert('Please select a category');
+          return;
+        }
+
+        const selectedOptions = [];
+
+        const totalChecked = Array.from(checkBoxes)
+          .filter(item => item.checked)
+          .map(item => {
+
+            selectedOptions.push(item.parentNode.innerText);
+
+            return +item.value;
+          })
+          .reduce((acc, item) => {
+            return acc + item
+          });
+
+        console.log(totalChecked);
+
+        const percentage = (totalChecked / totalValue) * 100;
+
+        console.log(selectedOptions);
+
+        percentResult.innerHTML = percentage.toFixed(2) + '%';
+
+        let selectionString = '';
+
+        selectedOptions.forEach(item => {
+          selectionString += `<li class="list-group-item">${item}</li>`;
+        })
+
+        yourSelections.innerHTML = selectionString;
+
+        resultModal.show();
+      }
+
+
+
+    </script>
+
+
+
+  </body>
+
+</html>
