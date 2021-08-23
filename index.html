@@ -20,8 +20,7 @@
       <form id="survey-form">
 
         <div class="form-group">
-          <p>Pain Intensity
-          </p>
+          <p>Pain Intensity</p>
           <label>
             <input name="pain_intensity" value="0" type="checkbox" class="input-checkbox" />I can tolerate the
             pain I
@@ -56,9 +55,7 @@
 
 
         <div class="form-group">
-          <p>Personal Care
-
-          </p>
+          <p>Personal Care</p>
           <label>
             <input name="personal_care" value="0" type="checkbox" class="input-checkbox" />I can look after myself
             normally without causing extra pain (0 points)
@@ -152,10 +149,7 @@
         </div>
 
         <div class="form-group">
-          <p>Sitting
-
-
-          </p>
+          <p>Sitting</p>
           <label>
             <input name="sitting" value="0" type="checkbox" class="input-checkbox" />I can sit in any chair as
             long as I like (0 points)
@@ -183,11 +177,7 @@
         </div>
 
         <div class="form-group">
-          <p>Standing
-
-
-
-          </p>
+          <p>Standing</p>
           <label>
             <input name="standing" value="0" type="checkbox" class="input-checkbox" />I can stand as long as I want
             without extra pain (0 points)
@@ -216,10 +206,6 @@
 
         <div class="form-group">
           <p>Sleeping</p>
-
-
-
-          </p>
           <label>
             <input name="sleeping" value="0" type="checkbox" class="input-checkbox" />Pain does not prevent me from
             sleeping well (0 points)
@@ -249,10 +235,6 @@
 
         <div class="form-group">
           <p>Sex Life</p>
-
-
-
-          </p>
           <label>
             <input name="sex_life" value="0" type="checkbox" class="input-checkbox" />My sex life is normal and
             causes no extra pain (0 points)
@@ -282,10 +264,6 @@
 
         <div class="form-group">
           <p>Social Life</p>
-
-
-
-          </p>
           <label>
             <input name="social_life" value="0" type="checkbox" class="input-checkbox" />My social life is normal and
             gives me no extra pain (0 points)
@@ -315,12 +293,7 @@
 
 
         <div class="form-group">
-          <p>Travelling
-          </p>
-
-
-
-          </p>
+          <p>Travelling</p>
           <label>
             <input name="travelling" value="0" type="checkbox" class="input-checkbox" />I can travel anywhere without
             extra pain (0 points)
@@ -371,7 +344,8 @@
 
               <hr>
 
-              <ul id="yourSelections" class="list-group"></ul>
+              <div id="yourSelections"></div>
+
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -430,13 +404,26 @@
           return;
         }
 
-        const selectedOptions = [];
+        const selectedHeaderAndValues = {};
 
         const totalChecked = Array.from(checkBoxes)
           .filter(item => item.checked)
           .map(item => {
+            /* target the parent label
+             notice the label is the parent of the checkbox option we are looping
+             label > checkbox */
 
-            selectedOptions.push(item.parentNode.innerText);
+            const label = item.parentNode;
+            const labelText = label.innerText;
+
+            /* but the label we just selected is a sibling to the paragraph p tag which holds the headers
+            
+            so we can select the label's parent then it's first p tag */
+            const headerParagraph = label.parentElement.firstElementChild;
+            const headerText = headerParagraph.innerText;
+
+            selectedHeaderAndValues[headerText] = labelText;
+            // i.e {'Travelling':'can travel anywhere without extra pain(0 points)'}
 
             return +item.value;
           })
@@ -444,26 +431,28 @@
             return acc + item
           });
 
-        console.log(totalChecked);
+        console.log(selectedHeaderAndValues);
 
         const percentage = (totalChecked / totalValue) * 100;
-
-        console.log(selectedOptions);
 
         percentResult.innerHTML = percentage.toFixed(2) + '%';
 
         let selectionString = '';
 
-        selectedOptions.forEach(item => {
-          selectionString += `<li class="list-group-item">${item}</li>`;
-        })
+        for (let [key, value] of Object.entries(selectedHeaderAndValues)) {
+          //we loop through the object in key value pairs
+          selectionString += `
+          <ul class="list-group mb-3">
+            <strong class="mb-1">${key}:</strong>
+            <li class="list-group-item">${value}</li>
+          </ul>
+          `;
+        }
 
         yourSelections.innerHTML = selectionString;
 
         resultModal.show();
       }
-
-
 
     </script>
 
